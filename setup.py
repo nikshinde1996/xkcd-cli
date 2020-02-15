@@ -10,6 +10,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        xkcd=src.main:cli
+        xkcd=src.cli:cli
     ''',
 )
