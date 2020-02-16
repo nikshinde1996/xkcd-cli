@@ -12,7 +12,7 @@ The missing CLI for exploring [xkcd web-comic](https://xkcd.com/) from your term
 ### Commands
 
 * `$ xkcd latest` - loads the latest comic in default image viewer.
-* `$ xkcd random` - leads any random comic content from past.
+* `$ xkcd random` - loads any random comic content from past.
 * `$ xkcd fetch --index=0` - loads the comic at given index.
 
 ##### Usage flags

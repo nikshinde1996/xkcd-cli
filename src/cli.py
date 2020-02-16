@@ -37,7 +37,7 @@ def random(log_info):
         img.show()
 
         if log_info:
-            log.info(json.dumps(response))
+            logger.info(json.dumps(response))
     except requests.ConnectionError as error:
         logger.exception(error)
 
@@ -56,7 +56,7 @@ def latest(log_info):
         img.show()
 
         if log_info:
-            log.info(response)
+            logger.info(response)
     except requests.ConnectionError as error:
         logger.exception(error)
 
@@ -79,7 +79,7 @@ def fetch(log_info, index):
             img.show()
 
             if log_info:
-                log.info(response)
+                logger.info(response)
     except requests.ConnectionError as error:
         logger.exception(error)
 

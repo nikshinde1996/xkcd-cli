@@ -17,7 +17,7 @@ class ColorFormatter(logging.Formatter):
         'info': dict(fg='green'),
         'debug': dict(fg='blue'),
         'warning': dict(fg='yellow'),
-        'error': dict(fg='red')
+        'error': dict(fg='red'),
         'critical': dict(fg='red'),
     }
 
@@ -51,8 +51,8 @@ def setup(name=__name__, level=logging.INFO):
     except ImportError as error:
         formatter = CustomFormatter('[.]%(message)s')
 
-    handler = logging.StreamHandler(None)
-    handler = logging.FileHandler('log.txt')
+    handler = logging.StreamHandler()
+    # handler = logging.FileHandler('log.txt')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     return logger
