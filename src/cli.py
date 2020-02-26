@@ -2,6 +2,7 @@ import click
 import json
 import requests
 import logging
+import webbrowser
 from PIL import Image
 from io import BytesIO
 from random import randint
@@ -82,6 +83,31 @@ def fetch(log_info, index):
                 logger.info(response)
     except requests.ConnectionError as error:
         logger.exception(error)
+
+@cli.command()
+@click.option('--blog', is_flag=True, help='Opens XKCD blog in default browser.')
+@click.option('--blag', is_flag=True, help='Opens XKCD blog in default browser.')
+@click.option('--fora', is_flag=True, help='Opens XKCD forums webpage in default browser.')
+@click.option('--forums', is_flag=True, help='Opens XKCD forums webpage in default browser.')
+@click.option('--store', is_flag=True, help='Opens XKCD merchandise store in default browser.')
+@click.option('--about', is_flag=True, help='Opens XKCD info webpage in default brwoser.')
+def open(blog, blag, fora, forums, store, about):
+    if blog or blag:
+        logger.info('Opening XKCD blog in default browser')
+        webbrowser.open_new_tab('https://blog.xkcd.com/')
+    elif fora or forums:
+        logger.info('Opening XKCD forums in default browser')
+        webbrowser.open_new_tab('https://forums.xkcd.com/')
+    elif store:
+        logger.info('Opening XKCD merchandise in default browser')
+        webbrowser.open_new_tab('https://store.xkcd.com/')
+    elif about:
+        logger.info('Opening XKCD abouts webpage in default browser')
+        webbrowser.open_new_tab('https://xkcd.com/about/')
+    else:
+        logger.warn('''Content flag required. Please use appropriate flag(s) in command.
+        Use --help for command usage''')
+        pass
 
 
 def get_latest_feed_index():
