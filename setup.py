@@ -2,8 +2,8 @@ from setuptools import find_packages
 from distutils.core import setup
 
 setup(
-    name='xkci-cli',
-    version='0.0.1',
+    name='xkcd-cli',
+    version='0.0.2',
     packages=find_packages(),
     license='MIT',
     include_package_data=True,
@@ -12,6 +12,8 @@ setup(
     download_url='',
     install_requires=[
         'Click',
+        'requests',
+        'pillow'
     ],
     keywords = ['web-comic', 'xkcd', 'cli'],
     entry_points='''

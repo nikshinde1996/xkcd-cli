@@ -10,7 +10,7 @@ The missing CLI for exploring [xkcd web-comic](https://xkcd.com/) from your term
 xkcd-cli is available as [pypi](https://pypi.org/project/xkci-cli/) package. 
 Install using pip/pip3
 
-`$ pip install xkci-cli==0.0.1`
+`$ pip install xkcd-cli`
 
 ### Commands
 
